@@ -1,6 +1,6 @@
 import { Divider } from "@nextui-org/divider";
 import { Card, CardHeader, CardBody } from "@nextui-org/card";
-import { Chip } from "@nextui-org/chip";
+import { SkillChip } from "./components/skills/skillChip";
 
 export default function Home() {
   return (
@@ -21,49 +21,49 @@ export default function Home() {
           <Card className="flex-1">
             <CardHeader className="font-bold">Languages</CardHeader>
             <CardBody className="flex flex-row flex-wrap gap-2">
-              <Chip variant="bordered">TypeScript</Chip>
-              <Chip variant="bordered">PHP</Chip>
-              <Chip variant="bordered">Python</Chip>
-              <Chip variant="bordered">HTML</Chip>
-              <Chip variant="bordered">CSS</Chip>
+              <SkillChip label="TypeScript" />
+              <SkillChip label="PHP" />
+              <SkillChip label="Python" />
+              <SkillChip label="HTML" />
+              <SkillChip label="CSS" />
             </CardBody>
           </Card>
           <Card className="flex-1">
             <CardHeader className="font-bold">Frameworks & Libraries</CardHeader>
             <CardBody className="flex flex-row flex-wrap gap-2">
-              <Chip variant="bordered">Next.js</Chip>
-              <Chip variant="bordered">Remix</Chip>
-              <Chip variant="bordered">Laravel</Chip>
-              <Chip variant="bordered">Tailwind CSS</Chip>
-              <Chip variant="bordered">Docker</Chip>
-              <Chip variant="bordered">Node.js</Chip>
-              <Chip variant="bordered">NPM</Chip>
-              <Chip variant="bordered">Biome</Chip>
+              <SkillChip label="Next.js" />
+              <SkillChip label="Remix" />
+              <SkillChip label="Laravel" />
+              <SkillChip label="Tailwind CSS" />
+              <SkillChip label="Docker" />
+              <SkillChip label="Node.js" />
+              <SkillChip label="NPM" />
+              <SkillChip label="Biome" />
             </CardBody>
           </Card>
           <Card className="flex-1">
             <CardHeader className="font-bold">Databases & ORMs</CardHeader>
             <CardBody className="flex flex-row flex-wrap gap-2">
-              <Chip variant="bordered">PostgreSQL</Chip>
-              <Chip variant="bordered">MySQL</Chip>
-              <Chip variant="bordered">Drizzle</Chip>
-              <Chip variant="bordered">Prisma</Chip>
+              <SkillChip label="PostgreSQL" />
+              <SkillChip label="MySQL" />
+              <SkillChip label="Drizzle" />
+              <SkillChip label="Prisma" />
             </CardBody>
           </Card>
           <Card className="flex-1">
             <CardHeader className="font-bold">Cloud Services</CardHeader>
             <CardBody className="flex flex-row flex-wrap gap-2">
-              <Chip variant="bordered">AWS</Chip>
-              <Chip variant="bordered">CloudFlare</Chip>
+              <SkillChip label="AWS" />
+              <SkillChip label="CloudFlare" />
             </CardBody>
           </Card>
           <Card className="flex-1">
             <CardHeader className="font-bold">Certificates</CardHeader>
             <CardBody className="flex flex-row flex-wrap gap-2">
-              <Chip variant="bordered">応用情報技術者</Chip>
-              <Chip variant="bordered">ITパスポート</Chip>
-              <Chip variant="bordered">アマチュア無線通信士第4級</Chip>
-              <Chip variant="bordered">TOEIC 760点</Chip>
+              <SkillChip label="応用情報技術者" />
+              <SkillChip label="ITパスポート" />
+              <SkillChip label="TOEIC 760点" />
+              <SkillChip label="アマチュア無線通信士第4級" />
             </CardBody>
           </Card>
         </div>
