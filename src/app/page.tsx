@@ -63,6 +63,7 @@ export default function Home() {
               <Chip variant="bordered">応用情報技術者</Chip>
               <Chip variant="bordered">ITパスポート</Chip>
               <Chip variant="bordered">アマチュア無線通信士第4級</Chip>
+              <Chip variant="bordered">TOEIC 760点</Chip>
             </CardBody>
           </Card>
         </div>
