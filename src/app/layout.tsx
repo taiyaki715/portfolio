@@ -15,20 +15,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <Providers>
         <body
           className="antialiased flex flex-col h-screen"
         >
-          {/* ヘッダー */}
-          <div className="sticky top-0">
-            <Header />
-          </div>
-          {/* メインコンテンツ */}
-          <main className="my-12 mx-16">
-            {children}
-          </main>
+          <Providers>
+            {/* ヘッダー */}
+            <div className="sticky top-0">
+              <Header />
+            </div>
+            {/* メインコンテンツ */}
+            <main className="my-12 mx-16">
+              {children}
+            </main>
+          </Providers>
         </body>
-      </Providers>
     </html>
   );
 }

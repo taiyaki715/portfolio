@@ -2,10 +2,15 @@
 
 import {NextUIProvider} from '@nextui-org/react'
 
-export function Providers({children}: { children: React.ReactNode }) {
+interface Props {
+  children: React.ReactNode
+  className?: string
+}
+
+export const Providers: React.FC<Props> = (props) => {
   return (
-    <NextUIProvider>
-      {children}
+    <NextUIProvider className={props.className}>
+      {props.children}
     </NextUIProvider>
   )
 }
