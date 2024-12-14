@@ -9,7 +9,7 @@ const OrbitronFont = Orbitron({
 
 export const Header: React.FC = () => {
     return (
-        <header className="px-8 py-4 shadow flex justify-between items-center">
+        <header className="px-8 py-4 shadow flex justify-between items-center backdrop-blur">
             {/* 左側 */}
             <h1 className={OrbitronFont.className}>taiyaki.tech</h1>
             {/* 右側 */}
