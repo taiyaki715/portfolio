@@ -16,9 +16,9 @@ export default function RootLayout({
   return (
     <html lang="ja">
         <body
-          className="antialiased flex flex-col h-screen"
+          className="antialiased flex flex-col bg-gradient-to-r from-teal-50 to-blue-100"
         >
-          <Providers>
+          <Providers className="">
             {/* ヘッダー */}
             <div className="sticky top-0">
               <Header />
