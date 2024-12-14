@@ -21,9 +21,11 @@ export default function Home() {
         <div className="grid grid-cols-2 gap-4">
           { skillGenres.map((skillGenre) => (
             <SkillCard title={skillGenre.title} key={skillGenre.title}>
-              { skillGenre.skills.map((skill) => (
-                <SkillChip label={skill} key={skill} />
-              ))}
+              <div className="flex flex-wrap gap-2 h-fit">
+                { skillGenre.skills.map((skill) => (
+                  <SkillChip label={skill.title} icon={skill.logo} key={skill.title} />
+                ))}
+              </div>
             </SkillCard>
           ))}
         </div>

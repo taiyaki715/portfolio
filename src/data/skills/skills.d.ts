@@ -1,4 +1,9 @@
+type Skill = {
+    title: string;
+    logo?: string;
+}
+
 export type SkillGenres = {
     title: string;
-    skills: string[];
+    skills: Skill[];
 }[];
