@@ -24,7 +24,7 @@ export default function RootLayout({
             <Header />
           </div>
           {/* メインコンテンツ */}
-          <main>
+          <main className="m-4">
             {children}
           </main>
         </Providers>
