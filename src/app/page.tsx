@@ -1,9 +1,9 @@
-import { Header } from "./components/header";
-
 export default function Home() {
   return (
     <div>
-      <Header />
+      <div className="min-h-[4000px]">
+        main
+      </div>
     </div>
   );
 }
