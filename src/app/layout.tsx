@@ -24,7 +24,7 @@ export default function RootLayout({
             <Header />
           </div>
           {/* メインコンテンツ */}
-          <main className="my-8">
+          <main className="my-12">
             {children}
           </main>
         </body>
