@@ -5,6 +5,7 @@ import { Orbitron } from "next/font/google"
 
 const OrbitronFont = Orbitron({
     weight: "600",
+    subsets: ["latin"],
 })
 
 export const Header: React.FC = () => {

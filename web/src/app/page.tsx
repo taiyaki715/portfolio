@@ -2,15 +2,16 @@ import { Divider } from "@nextui-org/divider";
 import { SkillChip } from "@/app/components/skills/skillChip";
 import { SkillCard } from "@/app/components/skills/skillCard";
 import { skillGenres } from "@/data/skills";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <div>
       {/* アイキャッチ */}
       <div className="flex flex-col items-center gap-8">
-        <img src="/usi.jpg" alt="" className="w-[256px] rounded-full border" />
+        <Image src="/usi.jpg" alt="" width={256} height={256} className="rounded-full border" />
         <div className="flex flex-col items-center gap-4">
-          <div className="font-black text-7xl">Hi, I'm <span className="text-blue-600">Taiki Ishikawa</span>.</div>
+          <div className="font-black text-7xl">Hi, I&apos;m <span className="text-blue-600">Taiki Ishikawa</span>.</div>
           <div>A Software Engineer currently living in Japan.</div>
         </div>
       </div>
