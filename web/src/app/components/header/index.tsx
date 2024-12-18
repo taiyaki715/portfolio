@@ -15,7 +15,7 @@ export const Header: React.FC = () => {
             <h1 className={OrbitronFont.className}>taiyaki.tech</h1>
             {/* 右側 */}
             <div className="flex items-center gap-4">
-                <Button as={Link} href="https://github.com/taiyaki715" radius="full" isExternal startContent={<Github className="w-4" />}>
+                <Button as={Link} href="https://github.com/taiyaki715" isExternal radius="full" variant="bordered" startContent={<Github className="w-4" />} className="border-1 border-zinc-800">
                     GitHub
                 </Button>
             </div>
