@@ -8,6 +8,6 @@ interface Props {
 
 export const SkillChip: React.FC<Props> = (props) => {
     return (
-        <Chip variant='bordered' startContent={props.icon && <Image src={props.icon} width={16} height={16} className='ml-1' alt='' />}>{ props.label }</Chip>
+        <Chip variant='bordered' className='border-1' startContent={props.icon && <Image src={props.icon} width={16} height={16} className='ml-1' alt='' />}>{ props.label }</Chip>
     )
 }
