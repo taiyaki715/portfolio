@@ -10,11 +10,12 @@ const OrbitronFont = Orbitron({
 
 export const Header: React.FC = () => {
     return (
-        <header className="px-8 py-4 shadow flex justify-between items-center backdrop-blur">
+        <header className="px-8 py-2 shadow flex justify-between items-center backdrop-blur">
             {/* 左側 */}
             <h1 className={OrbitronFont.className}>taiyaki.tech</h1>
             {/* 右側 */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-8">
+                <Link href="/blog" size="sm" color="foreground">Blog</Link>
                 <Button as={Link} href="https://github.com/taiyaki715" isExternal radius="full" variant="bordered" startContent={<Github className="w-4" />} className="border-1 border-zinc-800">
                     GitHub
                 </Button>
