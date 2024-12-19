@@ -12,7 +12,7 @@ export const Header: React.FC = () => {
     return (
         <header className="px-8 py-2 shadow flex justify-between items-center backdrop-blur">
             {/* 左側 */}
-            <h1 className={OrbitronFont.className}>taiyaki.tech</h1>
+            <Link href="/" className={`${OrbitronFont.className} text-foreground-`}>taiyaki.tech</Link>
             {/* 右側 */}
             <div className="flex items-center gap-8">
                 <Link href="/blog" size="sm" color="foreground">Blog</Link>
