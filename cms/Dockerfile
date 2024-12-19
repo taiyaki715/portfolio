@@ -1,10 +1,10 @@
 ### ベースイメージ ###
-FROM node:22-slim
+FROM node:20-slim AS base
 
 WORKDIR /app
 COPY . .
 
-EXPOSE 3000
+EXPOSE 1337
 
 ### 開発環境 ###
 FROM base AS dev
@@ -13,6 +13,4 @@ FROM base AS dev
 FROM base AS prod
 
 RUN npm install
-RUN npm run build
-
 CMD ["npm", "run", "start"]

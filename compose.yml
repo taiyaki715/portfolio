@@ -3,9 +3,39 @@ services:
     build:
       context: ./web
       dockerfile: Dockerfile
-    command: npm run dev
-    container_name: web
+    command: ["sh", "-c", "npm i && npm run dev"]
+    container_name: portfolio-web
+    depends_on:
+      - cms
     ports:
       - "3000:3000"
     volumes:
-      - ./web:/web
+      - ./web:/app
+
+  cms:
+    build:
+      context: ./cms
+      dockerfile: Dockerfile
+    command: ["sh" , "-c", "npm i && npm run develop"]
+    container_name: portfolio-cms
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "1337:1337"
+    volumes:
+      - ./cms:/app
+
+  db:
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    container_name: portfolio-db
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 1s
+      retries: 3
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db/data:/var/lib/postgresql/data
