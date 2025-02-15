@@ -17,5 +17,5 @@ const article = articlesResponse.contents[0];
 ---
 
 <Layout>
-    <div set:html={article.content}/>
+    <Fragment set:html={article.content}>
 </Layout>
