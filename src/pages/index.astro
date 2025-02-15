@@ -9,7 +9,7 @@ const articles = articlesResponse.contents;
 <Layout>
 	{
 		articles.map((article) => (
-			<p>{article.id}</p>
+			<a href=`/articles/${ article.id }`>{article.title}</a>
 		))
 	}
 </Layout>
