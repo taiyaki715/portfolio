@@ -3,16 +3,16 @@ import Layout from "../../layouts/Layout.astro";
 import { fetchArticles } from "../../lib/microcms/fetchArticles"
 
 export const getStaticPaths = async () => {
-	const articlesResponse = await fetchArticles({ fields: ["id"] });
-	return articlesResponse.contents.map((article) => ({
+	const postsResponse = await fetchArticles({ fields: ["id"] });
+	return postsResponse.contents.map((post) => ({
 		params: {
-			articleId: article.id,
+			postId: post.id,
 		},
 	}));
 };
 
-const { articleId } = Astro.params;
-const articlesResponse = await fetchArticles({ ids: articleId });
+const { postId } = Astro.params;
+const articlesResponse = await fetchArticles({ ids: postId });
 const article = articlesResponse.contents[0];
 ---
 

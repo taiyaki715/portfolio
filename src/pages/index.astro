@@ -2,14 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 import { fetchArticles } from '../lib/microcms/fetchArticles';
 
-const articlesResponse = await fetchArticles();
-const articles = articlesResponse.contents;
+const postsResponse = await fetchArticles();
+const posts = postsResponse.contents;
 ---
 
 <Layout>
 	{
-		articles.map((article) => (
-			<a href={`/articles/${ article.id }`}>{article.title}</a>
+		posts.map((post) => (
+			<a href={`/posts/${ post.id }`}>{post.title}</a>
 		))
 	}
 </Layout>

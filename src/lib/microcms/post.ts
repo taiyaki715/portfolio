@@ -1,8 +1,8 @@
 import type { MicroCMSContentId, MicroCMSDate, MicroCMSListResponse } from "microcms-js-sdk"
 
-type Article = {
+type Post = {
     title: string;
     content: string;
 }
 
-export type ArticlesResponse = MicroCMSListResponse<Article>;
+export type PostsResponse = MicroCMSListResponse<Post>;
