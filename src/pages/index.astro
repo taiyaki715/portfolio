@@ -1,15 +1,18 @@
 ---
+import Hero from '../components/Hero.astro';
 import Layout from '../layouts/Layout.astro';
 import { fetchArticles } from '../lib/microcms/fetchArticles';
 
-const articlesResponse = await fetchArticles();
-const articles = articlesResponse.contents;
+const postsResponse = await fetchArticles();
+const posts = postsResponse.contents;
 ---
 
 <Layout>
-	{
-		articles.map((article) => (
-			<p>{article.id}</p>
+	<Hero/>
+	<div class="w-full border-b border-slate-700" />
+	<!-- {
+		posts.map((post) => (
+			<a href={`/posts/${ post.id }`}>{post.title}</a>
 		))
-	}
+	} -->
 </Layout>

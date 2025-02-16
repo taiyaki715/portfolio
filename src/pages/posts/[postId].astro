@@ -1,0 +1,24 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { fetchArticles } from "../../lib/microcms/fetchArticles"
+
+export const getStaticPaths = async () => {
+	const postsResponse = await fetchArticles({ fields: ["id"] });
+	return postsResponse.contents.map((post) => ({
+		params: {
+			postId: post.id,
+		},
+	}));
+};
+
+const { postId } = Astro.params;
+const articlesResponse = await fetchArticles({ ids: postId });
+const article = articlesResponse.contents[0];
+---
+
+<Layout>
+	<div class="prose mx-auto">
+		<h1>{ article.title }</h1>
+		<div set:html={article.content}>
+	</div>
+</Layout>
