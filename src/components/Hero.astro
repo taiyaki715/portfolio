@@ -3,8 +3,9 @@ import { Image } from "astro:assets";
 import usi from "../assets/usi.jpg";
 ---
 
-<div class="flex gap-16 py-16">
-    <div class="flex flex-col gap-8 max-w-128">
+<div class="flex flex-col lg:flex-row items-center gap-8 max-w-5xl py-8 lg:py-16">
+    <Image src={usi} alt="" class="rounded-full border w-64" />
+    <div class="flex flex-col gap-8">
         <div>
             <h1 class="text-7xl font-bold">Taiki Ishikawa</h1>
             <h2 class="text-3xl font-bold">Web Developer</h2>
@@ -12,5 +13,4 @@ import usi from "../assets/usi.jpg";
         <p>とあるベンチャーで社内向けシステムの開発（インフラ寄り）を担当してます。</p>
         <a href="https://github.com/taiyaki715" class="bg-[#171515] text-white w-fit px-4 py-2 rounded">GitHub</a>
     </div>
-    <Image src={usi} alt="" class="rounded-full border w-96" />
 </div>
