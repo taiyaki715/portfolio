@@ -9,7 +9,7 @@ interface Props {
 const { blog } = Astro.props;
 ---
 
-<a href={`/posts/${blog.id}`} class="flex rounded border border-neutral-300 overflow-hidden">
+<a href={`/blogs/${blog.id}`} class="flex rounded border border-neutral-300 overflow-hidden">
     <div class="bg-neutral-100 flex justify-center items-center w-24 text-3xl">
         {blog.icon}
     </div>
