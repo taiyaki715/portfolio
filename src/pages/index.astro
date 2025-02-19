@@ -1,7 +1,7 @@
 ---
-import Hero from '../components/home/Hero.astro';
-import Blog from '../components/home/Blog.astro';
-import Layout from '../layouts/Layout.astro';
+import Hero from '@/components/home/Hero.astro';
+import Blog from '@/components/home/Blog.astro';
+import Layout from '@/layouts/Layout.astro';
 import { fetchArticles } from '../lib/microcms/fetchArticles';
 
 const blogsResponse = await fetchArticles({ limit: 3 });

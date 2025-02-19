@@ -1,6 +1,6 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import { fetchArticles } from "../../lib/microcms/fetchArticles"
+import Layout from "@/layouts/Layout.astro";
+import { fetchArticles } from "@/lib/microcms/fetchArticles"
 
 export const getStaticPaths = async () => {
 	const blogsResponse = await fetchArticles({ fields: ["id"] });
