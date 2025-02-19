@@ -1,18 +1,14 @@
 ---
-import Hero from '../components/Hero.astro';
-import Layout from '../layouts/Layout.astro';
-import { fetchArticles } from '../lib/microcms/fetchArticles';
+import Hero from '@/components/home/Hero.astro';
+import Blog from '@/components/home/Blog.astro';
+import Layout from '@/layouts/Layout.astro';
+import { fetchBlogs } from '../lib/microcms/fetchBlogs';
 
-const postsResponse = await fetchArticles();
-const posts = postsResponse.contents;
+const blogsResponse = await fetchBlogs({ limit: 3 });
+const blogs = blogsResponse.contents;
 ---
 
 <Layout>
 	<Hero/>
-	<div class="w-full border-b border-slate-700" />
-	<!-- {
-		posts.map((post) => (
-			<a href={`/posts/${ post.id }`}>{post.title}</a>
-		))
-	} -->
+	<Blog blogs={blogs} />
 </Layout>

@@ -1,0 +1,21 @@
+---
+import { Image } from "astro:assets";
+import usi from "@/assets/usi.jpg";
+import { buttonVariants } from "@/components/ui/button";
+import { Github } from "lucide-react";
+---
+
+<div class="flex flex-col lg:flex-row items-center lg:justify-center gap-8 max-w-5xl py-8 lg:py-16">
+    <Image src={usi} alt="" class="rounded-full border border-neutral-300 w-64" />
+    <div class="flex flex-col gap-8">
+        <div>
+            <h1 class="text-7xl font-bold">Taiki Ishikawa</h1>
+            <h2 class="text-3xl font-bold">Web Developer</h2>
+        </div>
+        <p>とあるベンチャーで社内向けシステムの開発（インフラ寄り）を担当してます。</p>
+        <a href="https://github.com/taiyaki715" class={`${buttonVariants({ variant: "secondary" })} w-fit`}>
+            <Github />
+            GitHub
+        </a>
+    </div>
+</div>
