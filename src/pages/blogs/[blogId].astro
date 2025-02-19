@@ -1,9 +1,9 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { fetchArticles } from "@/lib/microcms/fetchArticles"
+import { fetchBlogs } from "@/lib/microcms/fetchBlogs"
 
 export const getStaticPaths = async () => {
-	const blogsResponse = await fetchArticles({ fields: ["id"] });
+	const blogsResponse = await fetchBlogs({ fields: ["id"] });
 	return blogsResponse.contents.map((blog) => ({
 		params: {
 			blogId: blog.id,
@@ -12,13 +12,13 @@ export const getStaticPaths = async () => {
 };
 
 const { blogId } = Astro.params;
-const articlesResponse = await fetchArticles({ ids: blogId });
-const article = articlesResponse.contents[0];
+const blogsResponse = await fetchBlogs({ ids: blogId });
+const blog = blogsResponse.contents[0];
 ---
 
 <Layout>
 	<div class="prose mx-auto">
-		<h1>{ article.title }</h1>
-		<div set:html={article.content}>
+		<h1>{ blog.title }</h1>
+		<div set:html={blog.content}>
 	</div>
 </Layout>

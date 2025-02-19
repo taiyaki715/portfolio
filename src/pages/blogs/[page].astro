@@ -1,0 +1,42 @@
+---
+import BlogCard from '@/components/BlogCard.astro';
+import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/components/ui/pagination';
+import Layout from '@/layouts/Layout.astro';
+import { fetchBlogs } from '@/lib/microcms/fetchBlogs';
+import type { GetStaticPathsOptions } from 'astro';
+
+export const getStaticPaths = async ({ paginate }: GetStaticPathsOptions) => {
+    const blogsResponse = await fetchBlogs();
+    return paginate(blogsResponse.contents, { pageSize: 1 });
+}
+
+const { page } = Astro.props;
+---
+
+<Layout>
+    <div class="flex flex-col gap-8">
+        <h1 class="text-3xl font-bold">Blog</h1>
+        <div class="flex flex-col gap-4">
+            {
+                page.data.map((blog) => (
+                    <BlogCard blog={blog} />
+                ))
+            }
+        </div>
+        <Pagination>
+            <PaginationContent>
+                <PaginationItem>
+                    {page.currentPage !== 1 && <PaginationPrevious href={`/blogs/${page.currentPage - 1}`} />}
+                </PaginationItem>
+                <PaginationItem>
+                    <PaginationLink isActive>
+                        {page.currentPage}
+                    </PaginationLink>
+                </PaginationItem>
+                <PaginationItem>
+                    {page.currentPage !== page.lastPage && <PaginationNext href={`/blogs/${page.currentPage + 1}`} />}
+                </PaginationItem>
+            </PaginationContent>
+        </Pagination>
+    </div>
+</Layout>

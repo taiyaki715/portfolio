@@ -2,15 +2,13 @@
 import Hero from '@/components/home/Hero.astro';
 import Blog from '@/components/home/Blog.astro';
 import Layout from '@/layouts/Layout.astro';
-import { fetchArticles } from '../lib/microcms/fetchArticles';
+import { fetchBlogs } from '../lib/microcms/fetchBlogs';
 
-const blogsResponse = await fetchArticles({ limit: 3 });
+const blogsResponse = await fetchBlogs({ limit: 3 });
 const blogs = blogsResponse.contents;
 ---
 
 <Layout>
 	<Hero/>
-	<div class="w-full border-b border-neutral-800" />
 	<Blog blogs={blogs} />
-	<div class="w-full border-b border-neutral-800" />
 </Layout>
