@@ -1,6 +1,7 @@
 ---
-import type { BlogsResponse } from "../../lib/microcms/blog";
-import BlogCard from "../BlogCard.astro";
+import type { BlogsResponse } from "@/lib/microcms/blog";
+import BlogCard from "@/components/BlogCard.astro";
+import { buttonVariants } from "@/components/ui/button";
 
 interface Props {
     blogs: BlogsResponse["contents"];
@@ -16,7 +17,5 @@ const { blogs } = Astro.props;
             <BlogCard blog={blog} />
         ))}
     </div>
-    <a href="/blogs" class="bg-neutral-800 text-white w-fit rounded px-8 py-4 self-center">
-        他の記事も見てみる →
-    </a>
+    <a href="/blogs" class={`${buttonVariants()} w-fit self-center`}>他の記事も見てみる →</a>
 </div>
