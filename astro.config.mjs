@@ -9,5 +9,12 @@ export default defineConfig({
       plugins: [tailwindcss()],
   },
 
-  integrations: [react(), partytown()],
+  integrations: [
+    react(),
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
+      },
+    }),
+  ],
 });
