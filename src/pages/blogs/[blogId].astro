@@ -18,7 +18,7 @@ const blog = blogsResponse.contents[0];
 ---
 
 <Layout>
-	<div class="prose mx-auto">
+	<div class="prose prose-neutral mx-auto">
 		<h1>{ blog.title }</h1>
 		<p class="text-neutral-500 text-sm">{ parseDate(blog.publishedAt!) } 公開</p>
 		<div set:html={blog.content}>
