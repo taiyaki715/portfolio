@@ -6,10 +6,10 @@ import partytown from '@astrojs/partytown';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
+  site: "https://taiyaki-tech.com",
   vite: {
       plugins: [tailwindcss()],
   },
-
   integrations: [
     react(),
     partytown({
