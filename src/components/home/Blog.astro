@@ -12,10 +12,12 @@ const { blogs } = Astro.props;
 
 <div class="py-8 flex flex-col gap-8">
     <h1 class="text-5xl font-bold">Blog</h1>
-    <div class="flex flex-col gap-4">
+    <ul class="flex flex-col gap-4">
         { blogs.map((blog) => (
-            <BlogCard blog={blog} />
+            <li>
+                <BlogCard blog={blog} />
+            </li>
         ))}
-    </div>
+    </ul>
     <a href="/blogs/1" class={`${buttonVariants()} w-fit self-center`}>他の記事も見てみる →</a>
 </div>
