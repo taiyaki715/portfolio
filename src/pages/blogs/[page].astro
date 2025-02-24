@@ -28,7 +28,7 @@ const { page } = Astro.props;
         <Pagination>
             <PaginationContent>
                 <PaginationItem>
-                    <PaginationPrevious href={`/blogs/${page.currentPage - 1}`} size="" />
+                    {page.url.prev && <PaginationPrevious href={page.url.prev} size="" />}
                 </PaginationItem>
                 <PaginationItem>
                     <PaginationLink isActive size="">
@@ -36,7 +36,7 @@ const { page } = Astro.props;
                     </PaginationLink>
                 </PaginationItem>
                 <PaginationItem>
-                    <PaginationNext href={`/blogs/${page.currentPage + 1}`} size="" />
+                    {page.url.next && <PaginationNext href={page.url.next} size="" />}
                 </PaginationItem>
             </PaginationContent>
         </Pagination>
